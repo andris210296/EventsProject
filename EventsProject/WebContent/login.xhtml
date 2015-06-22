@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<ui:composition template="base.xhtml">
+	<ui:define name="content">
+
+
+
+
+
+
+
+
+		<div class="row">
+			<div class="col-md-6">
+
+
+				<div class="panel panel-primary panel-group" id="accordion">
+					<div class="panel panel-primary" id="panel1">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-target="#collapse1"
+									href="#collapse1" class="collapsed sketchy-font"> Meu
+									Perfil </a>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse">
+							<div class="panel-body">
+
+								<form method="post" action="alterarUsuario">
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">Username</label> <input
+											type="text" name="login" class="form-control" id=""
+											value="#{login}" /> <input type="hidden" name="id" id=""
+											value="#{id}" />
+									</div>
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">E-mail</label> <input type="text"
+											name="email" class="form-control" id="" value="#{email}" />
+									</div>
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">Senha</label> <input
+											type="password" name="senha" class="form-control" id=""
+											value="#{senha}" />
+									</div>
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">Data de Nascimento</label> <input
+											type="text" name="dtnascimento" class="form-control" id=""
+											value="#{dtnascimento}" />
+									</div>
+
+
+									<div class="form-group col-lg-6">
+										<button type="submit" class="btn btn-primary sketchy-font">Alterar</button>
+									</div>
+
+
+								</form>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+
+
+
+				</div>
+			</div>
+
+
+			<div class="col-md-6">
+
+
+				<div class="panel panel-primary panel-group" id="accordion">
+					<div class="panel panel-primary" id="panel2">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-target="#collapse2"
+									href="#collapse2" class="collapsed sketchy-font"> Criar
+									Evento </a>
+							</h4>
+						</div>
+						<div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">
+
+								<form method="post" action="cadastrarEvento">
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">Nome do Evento</label> <input
+											type="text" name="nomeEvento" class="form-control" id=""
+											value="" />
+									</div>
+									<input type="hidden" name="id" id="" value="#{id}" />
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">Descrição</label> <input
+											type="text" name="descricaoEvento" class="form-control" id=""
+											value="" />
+									</div>
+
+
+									<div class="form-group col-lg-6">
+										<div class="form-group">
+
+											<label class="sketchy-font">Data</label>
+											<div class='input-group date' id='datetimepicker2'>
+												<input type='text' class="form-control" name="dataEvento" />
+												<span class="input-group-addon"> <span
+													class="glyphicon glyphicon-calendar"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group col-lg-6">
+										<label class="sketchy-font">Horário</label>
+
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker3'>
+												<input type='text' class="form-control" name="horarioEvento" />
+												<span class="input-group-addon"> <span
+													class="glyphicon glyphicon-time"></span>
+												</span>
+											</div>
+										</div>
+
+									</div>
+
+
+									<div class="form-group col-lg-6">
+										<button type="submit" class="btn btn-primary sketchy-font">Criar</button>
+									</div>
+
+
+								</form>
+
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+
+
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-primary panel-group" id="accordion">
+					<div class="panel panel-primary" id="panel3">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-target="#collapse3"
+									href="#collapse3" class="collapsed sketchy-font">Eventos</a>
+							</h4>
+						</div>
+						<div id="collapse3" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="timeline">
+
+
+
+
+
+							<ui:repeat var="item" value="#{eventos}" varStatus="status">
+
+
+									<li class="sketchy-font">
+
+
+										<div class="timeline-badge primary">
+											<i class="glyphicon glyphicon-check"></i>
+										</div>
+										<div class="timeline-panel">
+											<div class="timeline-heading">
+												<h4 class="timeline-title">#{item.nome}</h4>
+												<p>
+													<small class="text-muted">
+													<i class="glyphicon glyphicon-time"></i>
+														  Horario:#{item.horario}</small>
+														
+														<small class="text-muted">
+													<i class="glyphicon glyphicon-calendar"></i>
+														Dia:#{item.data}</small>
+												</p>
+												
+												<p>#{item.descricao}</p>
+											</div>
+											
+										</div>
+
+									</li>
+
+								</ui:repeat>
+
+
+								</ul>
+
+
+
+
+							</div>
+
+
+
+						</div>
+
+					</div>
+
+
+
+
+
+
+				</div>
+
+
+
+
+
+
+			</div>
+		</div>
+
+
+	</ui:define>
+</ui:composition>
+</html>

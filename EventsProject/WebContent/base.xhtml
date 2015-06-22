@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<!-- <h:outputStylesheet library="css" name="cssLayout.css" /> -->
+
+
+
+
+
+
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+	<script src="js/moment.js"></script>
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+
+
+	<title>Events Project</title>
+</h:head>
+
+<h:body>
+
+
+	<div class="container-fluid">
+		<div class="navbar-wrapper">
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.xhtml"> <img src="img/logo.png"
+						height="30px" width="80px" />
+					</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+
+						<li class="sketchy-font"><a href="index.xhtml"><i
+								class="fa fa-home"></i> Home</a></li>
+						<li></li>
+
+
+						<li class="sketchy-font"><a href="cadastro.xhtml"><i
+								class="fa fa-user-plus"></i> Cadastre-se</a></li>
+
+
+
+
+
+
+
+					</ul>
+					<form class="navbar-form navbar-right" role="search" method="post" action="logarUsuario">
+						<div class="form-group">
+							<input type="text" class="form-control sketchy-font"
+								name="login" placeholder="Username" />
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control sketchy-font"
+								name="senha" placeholder="Senha" />
+						</div>
+
+
+
+						<button type="submit" class="btn btn-default sketchy-font">Logar</button>
+
+					</form>
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<header class="jumbotron" id="overview" style="text-align: left; text-shadow: 14px -8px 5px rgba(0, 0, 0, 0.29);">
+		<div class="container">
+			
+			<p></p>
+		
+			<h4 class="sketchy-font" >.</h4>
+			<h4 class="sketchy-font" >.</h4>
+			<div id="carbonads-container">
+				<div class="carbonad"></div>
+			</div>
+		</div>
+		</header>
+
+
+
+		<div id="content">
+			<ui:insert name="content">Content</ui:insert>
+		</div>
+
+
+
+
+
+		<div class="footer">
+
+
+
+			<div class="pull-right">
+
+				<div class="btn-toolbar" role="toolbar" aria-label="...">
+					<a class="btn btn-social-icon btn-twitter"> <i
+						class="fa fa-twitter"></i>
+					</a> <a class="btn btn-social-icon btn-facebook"> <i
+						class="fa fa-facebook"></i>
+					</a> <a class="btn btn-social-icon btn-google-plus"> <i
+						class="fa fa-google-plus"></i>
+					</a> <a class="btn btn-social-icon btn-github"> <i
+						class="fa fa-github"></i>
+					</a>
+
+				</div>
+			</div>
+
+			<span class="sketchy-font" style="text-shadow: 14px -8px 5px rgba(0, 0, 0, 0.29);">© Copyright 2015 Events</span>
+
+
+		</div>
+	</div>
+
+</h:body>
+
+
+
+
+
+<script type="text/javascript">
+
+	
+	
+</script>
+
+
+
+
+
+<style>
+.jumbotron {
+	background: url("img/events2.png") no-repeat left center;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 50% 100%;
+}
+
+
+
+.panel-heading a:after {
+	font-family: 'Glyphicons Halflings';
+	content: "\e114";
+	float: right;
+	color: grey;
+}
+
+.panel-heading a.collapsed:after {
+	content: "\e080";
+}
+
+.timeline {
+	list-style: none;
+	padding: 20px 0 20px;
+	position: relative;
+}
+
+.timeline:before {
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	content: " ";
+	width: 3px;
+	background-color: #eeeeee;
+	left: 25px;
+	margin-right: -1.5px;
+}
+
+.timeline>li {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.timeline>li:before, .timeline>li:after {
+	content: " ";
+	display: table;
+}
+
+.timeline>li:after {
+	clear: both;
+}
+
+.timeline>li:before, .timeline>li:after {
+	content: " ";
+	display: table;
+}
+
+.timeline>li:after {
+	clear: both;
+}
+
+.timeline>li>.timeline-panel {
+	width: calc(100% - 75px);
+	float: right;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	padding: 20px;
+	position: relative;
+	-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.timeline>li>.timeline-panel:before {
+	position: absolute;
+	top: 26px;
+	left: -15px;
+	display: inline-block;
+	border-top: 15px solid transparent;
+	border-right: 15px solid #ccc;
+	border-left: 0 solid #ccc;
+	border-bottom: 15px solid transparent;
+	content: " ";
+}
+
+.timeline>li>.timeline-panel:after {
+	position: absolute;
+	top: 27px;
+	left: -14px;
+	display: inline-block;
+	border-top: 14px solid transparent;
+	border-right: 14px solid #fff;
+	border-left: 0 solid #fff;
+	border-bottom: 14px solid transparent;
+	content: " ";
+}
+
+.timeline>li>.timeline-badge {
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.4em;
+	text-align: center;
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	margin-right: -25px;
+	background-color: #999999;
+	z-index: 100;
+	border-top-right-radius: 50%;
+	border-top-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel {
+	float: left;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:before {
+	border-right-width: 0;
+	border-left-width: 15px;
+	right: -15px;
+	left: auto;
+}
+
+.timeline>li.timeline-inverted>.timeline-panel:after {
+	border-right-width: 0;
+	border-left-width: 14px;
+	right: -14px;
+	left: auto;
+}
+
+.timeline-badge.primary {
+	background-color: #2e6da4 !important;
+}
+
+.timeline-badge.success {
+	background-color: #3f903f !important;
+}
+
+.timeline-badge.warning {
+	background-color: #f0ad4e !important;
+}
+
+.timeline-badge.danger {
+	background-color: #d9534f !important;
+}
+
+.timeline-badge.info {
+	background-color: #5bc0de !important;
+}
+
+.timeline-title {
+	margin-top: 0;
+	color: inherit;
+}
+
+.timeline-body>p, .timeline-body>ul {
+	margin-bottom: 0;
+}
+
+.timeline-body>p+p {
+	margin-top: 5px;
+}
+
+.timeline-body {
+	display: none;
+}
+
+
+
+@font-face {
+	font-family: "sketchy";
+	src: url("fonts/sketchy.ttf") format("truetype");
+}
+
+.sketchy-font {
+	font-family: "sketchy";
+}
+
+.row {
+	margin-top: 40px;
+	padding: 0 10px;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.panel-heading span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
